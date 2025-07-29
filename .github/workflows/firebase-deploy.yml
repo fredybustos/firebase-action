@@ -1,0 +1,30 @@
+name: Deploy to Firebase Hosting on release
+
+on:
+  push:
+    tags:
+      - '*-release'
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show release information
+        run: |
+          echo "Deploying release: ${{ github.ref }}"
+          echo "Commit SHA: ${{ github.sha }}"
+          echo "Triggered by push event with tag."
+
+      - name: Install dependencies and build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TEST_FIREBASE_ACTION }}
+          channelId: live
+          projectId: test-firebase-action
