@@ -1,69 +1,80 @@
-# React + TypeScript + Vite
+# Test Firebase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación web de prueba desarrollada con React, TypeScript y Vite, configurada para despliegue en Firebase Hosting.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** - Biblioteca de interfaz de usuario
+- **TypeScript** - Superset tipado de JavaScript
+- **Vite** - Herramienta de construcción y desarrollo
+- **Firebase Hosting** - Plataforma de alojamiento web
+- **ESLint** - Linter para código JavaScript/TypeScript
 
-## Expanding the ESLint configuration
+## 📦 Instalación
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clona el repositorio:
+```bash
+git clone https://github.com/usuario/test-firebase.git
+cd test-firebase
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Instala las dependencias:
+```bash
+npm install
 ```
+
+## 🛠️ Desarrollo
+
+Para iniciar el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+La aplicación estará disponible en `http://localhost:5173`
+
+## 🏗️ Construcción
+
+Para construir la aplicación para producción:
+
+```bash
+npm run build
+```
+
+Los archivos optimizados se generarán en la carpeta `dist/`.
+
+## 🔍 Linting
+
+Para ejecutar el linter y verificar la calidad del código:
+
+```bash
+npm run lint
+```
+
+## 📁 Estructura del Proyecto
+
+```
+test-firebase/
+├── public/          # Archivos estáticos
+├── src/             # Código fuente
+│   ├── assets/      # Recursos (imágenes, iconos)
+│   ├── App.tsx      # Componente principal
+│   ├── main.tsx     # Punto de entrada
+│   └── ...
+├── firebase.json    # Configuración de Firebase
+├── vite.config.ts   # Configuración de Vite
+└── package.json     # Dependencias y scripts
+```
+
+## 🔧 Scripts Disponibles
+
+- `npm run dev` - Inicia el servidor de desarrollo
+- `npm run build` - Construye la aplicación para producción
+- `npm run lint` - Ejecuta el linter
+- `npm run preview` - Previsualiza la build de producción
+
+## 📝 Notas
+
+- El proyecto utiliza Hot Module Replacement (HMR) para una experiencia de desarrollo fluida
+- TypeScript está configurado con reglas estrictas para mejor calidad de código
+- ESLint está configurado con reglas específicas para React y TypeScript
