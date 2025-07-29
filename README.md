@@ -14,7 +14,7 @@ Una aplicación web de prueba desarrollada con React, TypeScript y Vite, configu
 
 1. Clona el repositorio:
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/usuario/test-firebase.git
 cd test-firebase
 ```
 
