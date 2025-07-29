@@ -1,6 +1,6 @@
 name: CI for Firebase Hosting
 
-on: Pull request
+on: pull_request
 
 permissions:
   checks: write
