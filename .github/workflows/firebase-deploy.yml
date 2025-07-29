@@ -12,7 +12,9 @@ jobs:
 
       - name: Show release information
         run: |
-          echo "Deploying release: ${{ github.ref_name }}"
+          echo "Deploying release: ${{ github.ref }}"
+          echo "Commit SHA: ${{ github.sha }}"
+          echo "Triggered by push event with tag."
 
       - name: Install dependencies and build
         run: |
